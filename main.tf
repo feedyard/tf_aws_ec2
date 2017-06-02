@@ -12,5 +12,5 @@ resource "aws_instance" "mod" {
   iam_instance_profile = "${var.instance_profile}"
   monitoring = "${var.monitoring}"
 
-  tags = "${merge(var.tags, map("Name", format("%s%s", var.name, count.index)))}"
+  tags = "${merge(var.tags, map("Name", format("%s-%03d", var.name, count.index)))}"
 }
