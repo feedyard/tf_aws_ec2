@@ -8,7 +8,7 @@ resource "aws_instance" "mod" {
   subnet_id = "${var.subnet_id}"
   availability_zone = "${var.az}"
   associate_public_ip_address = "${var.associate_public_ip_address}"
-  vpc_security_group_ids = ["${var.vpc_security_group_ids}}"]
+  vpc_security_group_ids = ["${var.vpc_security_group_ids}"]
   iam_instance_profile = "${var.instance_profile}"
   monitoring = "${var.monitoring}"
 
