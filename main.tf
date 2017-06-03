@@ -14,6 +14,12 @@ resource "aws_instance" "mod" {
 
   provisioner "remote-exec" {
     inline = "${var.provisioner_commands}"
+
+    connection {
+      type     = "ssh"
+      user     = "${var.instance_user}"
+      private_key = "${var.server_pem}"
+    }
   }
 
   tags = "${merge(var.tags, map("Name", format("%s-%02d", var.name, count.index + 1)))}"

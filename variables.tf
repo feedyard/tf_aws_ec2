@@ -56,6 +56,16 @@ variable "provisioner_commands" {
   default = []
 }
 
+variable "instance_user" {
+  description = "username to use for provisioner ssh connection"
+  default = ""
+}
+
+variable "server_pem" {
+  description = "path to server *.pem file"
+  default = ""
+}
+
 variable "tags" {
   description = "A map of tags to add to all resources"
   default     = {}
