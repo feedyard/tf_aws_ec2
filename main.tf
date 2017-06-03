@@ -18,7 +18,7 @@ resource "aws_instance" "mod" {
     connection {
       type     = "ssh"
       user     = "${var.instance_user}"
-      private_key = "${var.server_pem}"
+      private_key = file("${path.module}../${var.server_pem}")
     }
   }
 
