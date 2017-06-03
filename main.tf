@@ -13,7 +13,7 @@ resource "aws_instance" "mod" {
   monitoring = "${var.monitoring}"
 
   provisioner "remote-exec" {
-    inline = "${var.provisioner-commands}"
+    inline = "${var.provisioner_commands}"
   }
 
   tags = "${merge(var.tags, map("Name", format("%s-%02d", var.name, count.index + 1)))}"

@@ -51,7 +51,7 @@ variable "number_of_instances" {
   default = 1
 }
 
-variable "provisioner-commands" {
+variable "provisioner_commands" {
   description = "remote-exec script to run post-provision"
   default = []
 }
