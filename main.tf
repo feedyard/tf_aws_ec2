@@ -12,5 +12,9 @@ resource "aws_instance" "mod" {
   iam_instance_profile = "${var.instance_profile}"
   monitoring = "${var.monitoring}"
 
+  provisioner "remote-exec" {
+    inline = "${var.provisioner-commands}"
+  }
+
   tags = "${merge(var.tags, map("Name", format("%s-%02d", var.name, count.index + 1)))}"
 }

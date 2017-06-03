@@ -51,6 +51,11 @@ variable "number_of_instances" {
   default = 1
 }
 
+variable "provisioner-commands" {
+  description = "remote-exec script to run post-provision"
+  default = []
+}
+
 variable "tags" {
   description = "A map of tags to add to all resources"
   default     = {}
